@@ -1,1 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    gap: 20px;
+    background-color: #fffaf0;
+    color: #554d45;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.navbar{
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    background-color: #f0dfc5;
+    color: #554d45;
+}
+
+nav{
+    grid-area: nav;
+    padding: 20px;
+    background-color: #f0dfc5;
+}
+
+.nav-links{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style-type: none;
+}
+
+.nav-links a{
+    color:#705b46;
+}
+
+.container{
+    grid-area: main;
+    min-width: 0;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.bio-hero{
+    width: 100%;
+    margin: 24px 0;
+    padding: 20px;
+    background-color: #eee5d6;
+    border: 2px solid #d8c9b4;
+}
+
+.bio-hero h2{
+    margin-bottom: 8px;
+    color: #594a3c;
+}
+
+.card-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.card{
+    min-width: 0;
+    padding: 20px;
+}
+
+.card-one{
+    background-color: #f3e5ce;
+    border: 2px solid #ddc9a8;
+}
+
+.card-two{
+    background-color: #f0dfd5;
+    border: 2px solid #d9beb0;
+}
+
+.card-three{
+    background-color: #e4e8dc;
+    border: 2px solid #c4ccb7;
+}
+
+.card img{
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 12px;
+}
+
+.card h2{
+    margin-bottom: 8px;
+    color:#594a3c;
+}
+
+.card p{
+    margin-bottom: 12px;
+}
+
+.card:hover{
+    box-shadow: 4px 4px 10px #d7c8b8;
+}
+
+footer{
+    grid-area: footer;
+    background-color: #f0dfc5;
+    margin-top: 24px;
+    padding: 20px;
+    text-align: center;
+}
+
+@media (min-width: 768px){
+    body{
+        grid-template-columns: 220px 1fr;
+        grid-template-areas:
+            "header header"
+            "nav main"
+            "footer footer";
+    }
+    
+    .card-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-one{
+        grid-column: 1 / -1;
+    }
+}
